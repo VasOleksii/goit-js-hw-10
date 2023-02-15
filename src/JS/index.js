@@ -5,6 +5,7 @@ import { fetchCountries } from './fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
 
+
 const refs = {
     searchForm: document.querySelector('#search-box'),
     countryList: document.querySelector('.country-list'),
@@ -37,17 +38,17 @@ const refs = {
   }
   
   function renderCountriesList(countries = []) {
-    return (markup = countries
+    return countries
       .map(country => {
         return `<li>
         <div class="box"><img src="${country.flags.svg}" alt="flag ${country.name.common}" /><h2>${country.name.common}</h2></div>
       </li>`;
       })
-      .join(''));
+      .join('');
   }
   
   function renderCountryCard(countries = []) {
-    return (markup = countries
+    return countries
       .map(country => {
         return `<div class="box"><img class="flag" src="${country.flags.svg}" alt="flag ${
           country.name.common
@@ -57,7 +58,7 @@ const refs = {
                 <p><span>Population</span>: ${country.population}</p>
                 <p><span>Languages</span>: ${Object.values(country.languages).join(', ')}</p>`;
       })
-      .join(''));
+      .join('');
     };
 
     function updateDocument(countryInfo = '', countryList = '') {
