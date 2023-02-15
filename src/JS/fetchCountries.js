@@ -1,4 +1,3 @@
-
 const ENDPOINT = 'https://restcountries.com/v3.1/';
 const SEARCH_BY = `name/`;
 const PARAMS = `?fields=name,capital,population,flags,languages`;
